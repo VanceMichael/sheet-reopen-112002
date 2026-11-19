@@ -1,0 +1,50 @@
+[
+  {
+    "record": "referee-1",
+    "availableFrom": 1,
+    "kind": "rule",
+    "payload": {
+      "sheet": "S2",
+      "required": [
+        "S2/A",
+        "S2/B"
+      ],
+      "tempRange": [
+        -5,
+        -4
+      ],
+      "freeze": "11:26"
+    }
+  },
+  {
+    "record": "referee-2",
+    "availableFrom": 1,
+    "kind": "rule",
+    "payload": {
+      "sheet": "S3",
+      "required": [
+        "S3/A",
+        "S3/B"
+      ],
+      "tempRange": [
+        -5,
+        -4
+      ],
+      "freeze": "11:26"
+    }
+  },
+  {
+    "record": "referee-3",
+    "availableFrom": 4,
+    "kind": "handoff",
+    "payload": {
+      "id": "O7",
+      "sheet": "S2",
+      "region": [
+        "S2/A",
+        "S2/B"
+      ],
+      "time": "11:26"
+    }
+  }
+]

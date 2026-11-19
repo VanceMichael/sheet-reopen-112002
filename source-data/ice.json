@@ -1,0 +1,63 @@
+[
+  {
+    "record": "ice-1",
+    "availableFrom": 1,
+    "kind": "layout",
+    "payload": {
+      "cal": "L0",
+      "frame": "F7",
+      "points": {
+        "X1": "S1/A",
+        "X2": "S1/B"
+      },
+      "valid": [
+        "10:00",
+        "11:08"
+      ]
+    }
+  },
+  {
+    "record": "ice-2",
+    "availableFrom": 2,
+    "kind": "layout",
+    "payload": {
+      "cal": "L1",
+      "frame": "F7",
+      "points": {
+        "X1": "S2/B",
+        "X2": "S2/A"
+      },
+      "valid": [
+        "11:08",
+        "12:00"
+      ]
+    }
+  },
+  {
+    "record": "ice-3",
+    "availableFrom": 2,
+    "kind": "work",
+    "payload": {
+      "work": "G7",
+      "region": [
+        "S2/B",
+        "S3/A"
+      ],
+      "begins": "11:12",
+      "done": "11:22"
+    }
+  },
+  {
+    "record": "ice-4",
+    "availableFrom": 4,
+    "kind": "work",
+    "payload": {
+      "work": "G8",
+      "region": [
+        "S2/B"
+      ],
+      "begins": "11:27",
+      "done": "11:39"
+    }
+  }
+]
