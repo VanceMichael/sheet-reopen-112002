@@ -1,14 +1,14 @@
 [
   {
-    "record": "ice-1",
+    "record": "map-0",
     "availableFrom": 1,
     "kind": "layout",
     "payload": {
       "cal": "L0",
       "frame": "F7",
       "points": {
-        "X1": "S1/A",
-        "X2": "S1/B"
+        "X1": "S2/A",
+        "X2": "S2/B"
       },
       "valid": [
         "10:00",
@@ -17,7 +17,7 @@
     }
   },
   {
-    "record": "ice-2",
+    "record": "map-1",
     "availableFrom": 2,
     "kind": "layout",
     "payload": {
@@ -34,30 +34,149 @@
     }
   },
   {
-    "record": "ice-3",
+    "record": "map-2",
+    "availableFrom": 1,
+    "kind": "layout",
+    "payload": {
+      "cal": "L2",
+      "frame": "F8",
+      "points": {
+        "X1": "shared/23",
+        "X2": "S3/B"
+      },
+      "valid": [
+        "10:00",
+        "12:00"
+      ]
+    }
+  },
+  {
+    "record": "g7",
     "availableFrom": 2,
     "kind": "work",
     "payload": {
       "work": "G7",
       "region": [
         "S2/B",
-        "S3/A"
+        "shared/23"
       ],
       "begins": "11:12",
       "done": "11:22"
     }
   },
   {
-    "record": "ice-4",
+    "record": "crew-2",
+    "availableFrom": 2,
+    "kind": "crewWindow",
+    "payload": {
+      "window": "W7",
+      "crew": "north",
+      "windowTime": [
+        "11:22",
+        "11:27"
+      ],
+      "cells": [
+        "S2/A",
+        "S2/B",
+        "shared/23"
+      ],
+      "capacity": 2
+    }
+  },
+  {
+    "record": "crew-3",
+    "availableFrom": 2,
+    "kind": "crewWindow",
+    "payload": {
+      "window": "W8",
+      "crew": "north",
+      "windowTime": [
+        "11:27",
+        "11:34"
+      ],
+      "cells": [
+        "S2/A",
+        "shared/23",
+        "S3/B"
+      ],
+      "capacity": 2
+    }
+  },
+  {
+    "record": "crew-4",
+    "availableFrom": 2,
+    "kind": "crewWindow",
+    "payload": {
+      "window": "W9",
+      "crew": "south",
+      "windowTime": [
+        "11:26",
+        "11:30"
+      ],
+      "cells": [
+        "S3/B",
+        "shared/23"
+      ],
+      "capacity": 1
+    }
+  },
+  {
+    "record": "job-1",
+    "availableFrom": 3,
+    "kind": "job",
+    "payload": {
+      "job": "J7",
+      "window": "W7",
+      "cells": [
+        "S2/B",
+        "shared/23"
+      ],
+      "status": "accepted",
+      "time": "11:22"
+    }
+  },
+  {
+    "record": "g8",
     "availableFrom": 4,
     "kind": "work",
     "payload": {
       "work": "G8",
       "region": [
-        "S2/B"
+        "S2/B",
+        "shared/23"
       ],
-      "begins": "11:27",
-      "done": "11:39"
+      "begins": "11:28",
+      "done": "11:35"
+    }
+  },
+  {
+    "record": "job-2",
+    "availableFrom": 4,
+    "kind": "job",
+    "payload": {
+      "job": "J7",
+      "window": "W7",
+      "cells": [
+        "S2/B",
+        "shared/23"
+      ],
+      "status": "cancelRequested",
+      "time": "11:24"
+    }
+  },
+  {
+    "record": "job-3",
+    "availableFrom": 5,
+    "kind": "job",
+    "payload": {
+      "job": "J7",
+      "window": "W7",
+      "cells": [
+        "S2/B",
+        "shared/23"
+      ],
+      "status": "released",
+      "time": "11:25"
     }
   }
 ]

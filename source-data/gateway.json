@@ -1,0 +1,246 @@
+{
+  "rounds": [
+    {
+      "stage": 1,
+      "open": "11:06",
+      "close": "11:08",
+      "credits": 3,
+      "blocks": [
+        "legacy-f7",
+        "north-f8"
+      ]
+    },
+    {
+      "stage": 2,
+      "open": "11:21",
+      "close": "11:23",
+      "credits": 3,
+      "blocks": [
+        "legacy-f7",
+        "north-f8",
+        "east-f7",
+        "west-f8"
+      ]
+    },
+    {
+      "stage": 3,
+      "open": "11:24",
+      "close": "11:26",
+      "credits": 3,
+      "blocks": [
+        "short-f7",
+        "relay-f7",
+        "west-f8"
+      ]
+    },
+    {
+      "stage": 4,
+      "open": "11:27",
+      "close": "11:29",
+      "credits": 4,
+      "blocks": [
+        "relay-f7",
+        "alt-f7",
+        "return-f8"
+      ]
+    },
+    {
+      "stage": 5,
+      "open": "11:36",
+      "close": "11:38",
+      "credits": 2,
+      "blocks": [
+        "return-f8",
+        "later-f7"
+      ]
+    }
+  ],
+  "blocks": {
+    "legacy-f7": {
+      "frame": "F7",
+      "first": 41,
+      "last": 41,
+      "cost": 1,
+      "expires": 2,
+      "rows": [
+        {
+          "frame": "F7",
+          "seq": 41,
+          "cal": "L0",
+          "probe": "X1",
+          "temp": -4.8,
+          "time": "11:04"
+        }
+      ]
+    },
+    "north-f8": {
+      "frame": "F8",
+      "first": 91,
+      "last": 91,
+      "cost": 2,
+      "expires": 2,
+      "rows": [
+        {
+          "frame": "F8",
+          "seq": 91,
+          "cal": "L2",
+          "probe": "X2",
+          "temp": -4.7,
+          "time": "11:06"
+        }
+      ]
+    },
+    "east-f7": {
+      "frame": "F7",
+      "first": 42,
+      "last": 43,
+      "cost": 2,
+      "expires": 2,
+      "rows": [
+        {
+          "frame": "F7",
+          "seq": 42,
+          "cal": "L1",
+          "probe": "X1",
+          "temp": -4.3,
+          "time": "11:09"
+        },
+        {
+          "frame": "F7",
+          "seq": 43,
+          "cal": "L1",
+          "probe": "X2",
+          "temp": -4.5,
+          "time": "11:20"
+        }
+      ]
+    },
+    "west-f8": {
+      "frame": "F8",
+      "first": 92,
+      "last": 92,
+      "cost": 1,
+      "expires": 3,
+      "rows": [
+        {
+          "frame": "F8",
+          "seq": 92,
+          "cal": "L2",
+          "probe": "X1",
+          "temp": -4.7,
+          "time": "11:23"
+        }
+      ]
+    },
+    "short-f7": {
+      "frame": "F7",
+      "first": 44,
+      "last": 45,
+      "cost": 2,
+      "expires": 3,
+      "rows": [
+        {
+          "frame": "F7",
+          "seq": 44,
+          "cal": "L1",
+          "probe": "X2",
+          "temp": -4.5,
+          "time": "11:23"
+        },
+        {
+          "frame": "F7",
+          "seq": 45,
+          "cal": "L1",
+          "probe": "X1",
+          "temp": -4.6,
+          "time": "11:24"
+        }
+      ],
+      "damagedIn": 3
+    },
+    "relay-f7": {
+      "frame": "F7",
+      "first": 44,
+      "last": 46,
+      "cost": 2,
+      "expires": 4,
+      "rows": [
+        {
+          "frame": "F7",
+          "seq": 44,
+          "cal": "L1",
+          "probe": "X2",
+          "temp": -4.5,
+          "time": "11:23"
+        },
+        {
+          "frame": "F7",
+          "seq": 45,
+          "cal": "L1",
+          "probe": "X1",
+          "temp": -4.6,
+          "time": "11:24"
+        },
+        {
+          "frame": "F7",
+          "seq": 46,
+          "cal": "L1",
+          "probe": "X1",
+          "temp": -4.8,
+          "time": "11:34"
+        }
+      ]
+    },
+    "alt-f7": {
+      "frame": "F7",
+      "first": 45,
+      "last": 45,
+      "cost": 1,
+      "expires": 4,
+      "rows": [
+        {
+          "frame": "F7",
+          "seq": 45,
+          "cal": "L1",
+          "probe": "X1",
+          "temp": -3.8,
+          "time": "11:24"
+        }
+      ]
+    },
+    "return-f8": {
+      "frame": "F8",
+      "first": 93,
+      "last": 93,
+      "cost": 2,
+      "expires": 5,
+      "rows": [
+        {
+          "frame": "F8",
+          "seq": 93,
+          "cal": "L2",
+          "probe": "X1",
+          "temp": -4.6,
+          "time": "11:32"
+        }
+      ]
+    },
+    "later-f7": {
+      "frame": "F7",
+      "first": 47,
+      "last": 47,
+      "cost": 1,
+      "expires": 5,
+      "rows": [
+        {
+          "frame": "F7",
+          "seq": 47,
+          "cal": "L1",
+          "probe": "X1",
+          "temp": -4.7,
+          "time": "11:35"
+        }
+      ]
+    }
+  }
+}

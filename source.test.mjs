@@ -54,3 +54,45 @@ test('资料在指定回放阶段从来源完整分页返回', async (t) => {
   assert.equal((await fetch(`${url}/source/missing`)).status, 404);
   t.diagnostic(`${index.sources.length} 处来源、${index.stages} 个阶段、${index.originals.length} 份原件`);
 });
+
+test('短连目录、原件摘要、共享额度与到期状态', async (t) => {
+  const { server, url } = await start();
+  t.after(() => new Promise((resolve) => server.close(resolve)));
+  const change = (stage) => fetch(`${url}/control?stage=${stage}`, { method: 'POST' });
+  const catalog = async () => {
+    const response = await fetch(url + '/gateway/catalog');
+    assert.equal(response.status, 200);
+    return response.json();
+  };
+  const block = (id) => fetch(`${url}/gateway/blocks/${id}`);
+  const digest = async (response) => createHash('sha256').update(Buffer.from(await response.arrayBuffer())).digest('hex');
+
+  await change(2);
+  const initial = await catalog();
+  const east = initial.blocks.find(({ id }) => id === 'east-f7');
+  assert.equal(initial.open, '11:21');
+  assert.equal(initial.remaining, 3);
+  assert.equal(await digest(await block(east.id)), east.sha256);
+  assert.equal((await catalog()).remaining, 1);
+
+  await change(3);
+  const next = await catalog();
+  const damaged = next.blocks.find(({ id }) => id === 'short-f7');
+  assert.equal((await block(east.id)).status, 410);
+  const response = await block(damaged.id);
+  assert.equal(response.status, 200);
+  assert.notEqual(await digest(response), damaged.sha256);
+  assert.equal((await block('relay-f7')).status, 429);
+  assert.equal((await catalog()).remaining, 1);
+  assert.equal((await block('west-f8')).status, 200);
+  assert.equal((await catalog()).remaining, 0);
+
+  await change(4);
+  const { remaining, blocks } = await catalog();
+  assert.equal(remaining, 4);
+  for (const id of ['relay-f7', 'alt-f7']) {
+    const metadata = blocks.find((entry) => entry.id === id);
+    assert.equal(await digest(await block(id)), metadata.sha256);
+  }
+  assert.equal((await catalog()).remaining, 1);
+});

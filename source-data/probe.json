@@ -1,63 +1,101 @@
 [
   {
-    "record": "probe-1",
+    "record": "clock-7a",
     "availableFrom": 1,
-    "kind": "read",
+    "kind": "clock",
     "payload": {
       "frame": "F7",
-      "seq": 41,
-      "cal": "L0",
-      "probe": "X1",
-      "temp": -4.8,
-      "time": "11:04"
+      "deviceRange": [
+        "10:00",
+        "12:00"
+      ],
+      "shiftMinutes": [
+        -2,
+        2
+      ]
     }
   },
   {
-    "record": "probe-2",
+    "record": "clock-8a",
+    "availableFrom": 1,
+    "kind": "clock",
+    "payload": {
+      "frame": "F8",
+      "deviceRange": [
+        "10:00",
+        "12:00"
+      ],
+      "shiftMinutes": [
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "record": "bounds-1",
+    "availableFrom": 1,
+    "kind": "buffer",
+    "payload": {
+      "frame": "F7",
+      "oldest": 41,
+      "newest": 41
+    }
+  },
+  {
+    "record": "bounds-2",
     "availableFrom": 2,
-    "kind": "read",
+    "kind": "buffer",
     "payload": {
       "frame": "F7",
-      "seq": 42,
-      "cal": "L1",
-      "probe": "X1",
-      "temp": -4.3,
-      "time": "11:09"
+      "oldest": 41,
+      "newest": 43
     }
   },
   {
-    "record": "probe-3",
+    "record": "bounds-3",
     "availableFrom": 3,
-    "kind": "read",
+    "kind": "buffer",
     "payload": {
       "frame": "F7",
-      "seq": 44,
-      "cal": "L1",
-      "probe": "X2",
-      "temp": -4.5,
-      "time": "11:23"
+      "oldest": 44,
+      "newest": 46
     }
   },
   {
-    "record": "probe-4",
-    "availableFrom": 3,
-    "kind": "overrun",
-    "payload": {
-      "frame": "F7",
-      "oldest": 44
-    }
-  },
-  {
-    "record": "probe-5",
+    "record": "clock-7b",
     "availableFrom": 4,
-    "kind": "read",
+    "kind": "clock",
+    "payload": {
+      "frame": "F7",
+      "deviceRange": [
+        "11:23",
+        "11:34"
+      ],
+      "shiftMinutes": [
+        0,
+        0
+      ],
+      "supersedes": "clock-7a"
+    }
+  },
+  {
+    "record": "resolve-45",
+    "availableFrom": 5,
+    "kind": "resolution",
     "payload": {
       "frame": "F7",
       "seq": 45,
-      "cal": "L1",
-      "probe": "X1",
-      "temp": -4.5,
-      "time": "11:25"
+      "acceptedBlock": "relay-f7"
+    }
+  },
+  {
+    "record": "bounds-5",
+    "availableFrom": 5,
+    "kind": "buffer",
+    "payload": {
+      "frame": "F7",
+      "oldest": 47,
+      "newest": 47
     }
   }
 ]

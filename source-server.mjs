@@ -2,6 +2,7 @@ import { createServer } from 'node:http';
 import { once } from 'node:events';
 import { readFile } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
+import { gateway } from './gateway.mjs';
 
 const here = new URL('./', import.meta.url);
 const fixtures = new URL('source-data/', here);
@@ -18,6 +19,7 @@ export async function start({ port = 0, host = '127.0.0.1', portal } = {}) {
   for (const name of index.sources) {
     sources.set(name, JSON.parse(await readFile(new URL(name + '.json', fixtures), 'utf8')));
   }
+  const serveGateway = gateway(JSON.parse(await readFile(new URL('gateway.json', fixtures), 'utf8')), sendJson);
   let stage = 1;
   const server = createServer(async (request, response) => {
     const url = new URL(request.url, 'http://127.0.0.1');
@@ -32,6 +34,7 @@ export async function start({ port = 0, host = '127.0.0.1', portal } = {}) {
         sendJson(response, 200, { stage });
         return;
       }
+      if (serveGateway(request, response, url, stage)) return;
       if (portal && await portal(request, response, url, stage)) return;
       if (request.method !== 'GET') {
         sendJson(response, 405, { error: '来源仅支持读取' });
