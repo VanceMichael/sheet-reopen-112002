@@ -5,6 +5,7 @@
     "referee"
   ],
   "stages": 5,
+  "portal": true,
   "originals": [],
   "originalStages": {},
   "digests": {}
